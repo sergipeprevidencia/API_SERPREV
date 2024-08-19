@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header h1 {
+    margin: 0;
+    background-color: #0e4194;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+
+}
+
+header p {
+    margin: 20px 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: justify;
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    background-color: #008acb;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #007abf;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.filters input {
+    display: block;
+    margin: 5px 0;
+    padding: 8px;
+    width: calc(100% - 16px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+button.toggle-button {
+    background-color: #7bb52c;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+button.toggle-button:hover {
+    background-color: #6a9a26;
+}
+
+pre {
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section button.toggle-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section button.toggle-button::after {
+    content: "\25BC";
+    font-size: 0.75em;
+    margin-left: 10px;
+}
+
+section .content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+section .filters input {
+    max-width: 400px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #0e4194; /* Opcional: cor de fundo para o rodapé */
+}
+
+footer img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao tamanho da tela */
+    height: auto;
+}

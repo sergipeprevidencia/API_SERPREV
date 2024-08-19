@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Dados Abertos do SergipePrevidência</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>API de Dados Abertos do SergipePrevidência</h1>
+        <p>O SergipePrevidência continua a inovar, tornando o que é essencial em algo acessível: agora, os dados estão disponíveis de forma ainda mais prática. Estamos facilitando o acesso de programas de computador a essas informações. O SergipePrevidência oferece os dados do Instituto e do Finanprev do Portal da Transparência por meio de uma API (Interface de Programação de Aplicativos). Acreditamos no potencial criativo da comunidade e confiamos que ela pode desenvolver suas próprias soluções utilizando esses dados da forma que melhor atender às suas necessidades. Com isso, nosso objetivo é simplificar o processo de criação de aplicativos. Estamos abertos a parcerias com desenvolvedores interessados em aproveitar os dados do SergipePrevidência e Finanprev para criar novas ferramentas. Confira abaixo como começar.</p>
+        <p>URL Básica<br>Para acessar os dados, é necessário saber o endereço ou a URL básica:<br>https://wtxoasyroqckpsnlibjx.supabase.co/rest/v1/</p>
+    </header>
+
+    <main>
+        <section>
+            <button class="toggle-button">GET /receitas</button>
+            <div class="content" style="display: none;">
+                <div id="receitasFilters" class="filters">
+                    <input type="text" data-key="COD_ORGAO" placeholder="COD_ORGAO">
+                    <input type="text" data-key="SGL_ORGAO" placeholder="SGL_ORGAO">
+                    <input type="text" data-key="MES" placeholder="MES">
+                    <input type="text" data-key="ANO" placeholder="ANO">
+                </div>
+                <button class="fetch-data" data-table="receitas">Buscar</button>
+                <button class="download-csv" data-table="receitas">Baixar CSV</button>
+                <button class="download-json" data-table="receitas">Baixar JSON</button>
+                <pre id="receitasOutput"></pre>
+            
+            <body>
+                <p>Fonte: https://www.transparencia.se.gov.br/DadosAbertos/DadosAbertos.xhtml</p>
+            <body>
+
+            </div>
+        </section>
+
+        <section>
+            <button class="toggle-button">GET /empenhos</button>
+            <div class="content" style="display: none;">
+                <div id="empenhosFilters" class="filters">
+                    <input type="text" data-key="COD_ORGAO" placeholder="COD_ORGAO">
+                    <input type="text" data-key="SGL_ORGAO" placeholder="SGL_ORGAO">
+                    <input type="text" data-key="DAT_EMPENHO" placeholder="DAT_EMPENHO">
+                    <input type="text" data-key="COD_FUNCAO" placeholder="COD_FUNCAO">
+                    <input type="text" data-key="NOM_FUNCAO" placeholder="NOM_FUNCAO">
+                    <input type="text" data-key="COD_SUBFUNCAO" placeholder="COD_SUBFUNCAO">
+                    <input type="text" data-key="NOM_SUBFUNCAO" placeholder="NOM_SUBFUNCAO">
+                    <input type="text" data-key="COD_PROGRAMA" placeholder="COD_PROGRAMA">
+                    <input type="text" data-key="DS_PROGRAMA" placeholder="DS_PROGRAMA">
+                    <input type="text" data-key="COD_ACAO_PROJ_ATV" placeholder="COD_ACAO_PROJ_ATV">
+                    <input type="text" data-key="NOM_ACAO_PROJ_ATV" placeholder="NOM_ACAO_PROJ_ATV">
+                    <input type="text" data-key="COD_FONTE_RECURSO" placeholder="COD_FONTE_RECURSO">
+                    <input type="text" data-key="NOM_FONTE_RECURSO" placeholder="NOM_FONTE_RECURSO">
+                    <input type="text" data-key="COD_ELEMENTO_DESPESA" placeholder="COD_ELEMENTO_DESPESA">
+                    <input type="text" data-key="NOM_ELEMENTO_DESPESA" placeholder="NOM_ELEMENTO_DESPESA">
+                    <input type="text" data-key="TIPO_DESPESA" placeholder="TIPO_DESPESA">
+                </div>
+                <button class="fetch-data" data-table="empenhos">Buscar</button>
+                <button class="download-csv" data-table="empenhos">Baixar CSV</button>
+                <button class="download-json" data-table="empenhos">Baixar JSON</button>
+                <pre id="empenhosOutput"></pre>
+
+            <body>
+                <p>Fonte: https://www.transparencia.se.gov.br/DadosAbertos/DadosAbertos.xhtml</p>
+            <body>
+
+            </div>
+        </section>
+
+        <section>
+            <button class="toggle-button">GET /folhas</button>
+            <div class="content" style="display: none;">
+                <div id="folhasFilters" class="filters">
+                    <input type="text" data-key="ANO" placeholder="Ano">
+                    <input type="text" data-key="MES" placeholder="Mês">
+                    <input type="text" data-key="TIPO_FOLHA" placeholder="Tipo de Folha">
+                    <input type="text" data-key="CATEGORIA" placeholder="CATEGORIA">
+                    <input type="text" data-key="UNIDADE_GESTORA" placeholder="UNIDADE_GESTORA">
+                    <input type="text" data-key="FASE" placeholder="FASE">
+                </div>
+                <button class="fetch-data" data-table="folhas">Buscar</button>
+                <button class="download-csv" data-table="folhas">Baixar CSV</button>
+                <button class="download-json" data-table="folhas">Baixar JSON</button>
+                <pre id="folhasOutput"></pre>
+
+            <body>
+                <p>Fonte: SEFAZ-SE|FPI/IGesp</p>
+            <body>
+
+            </div>
+        </section>
+
+        <section>
+            <button class="toggle-button">GET /liquidacoes</button>
+            <div class="content" style="display: none;">
+                <div id="liquidacoesFilters" class="filters">
+                    <input type="text" data-key="COD_ORGAO" placeholder="COD_ORGAO">
+                    <input type="text" data-key="SGL_ORGAO" placeholder="SGL_ORGAO">
+                    <input type="text" data-key="DAT_LIQUIDACAO" placeholder="Data de Liquidação">
+                    <input type="text" data-key="COD_FUNCAO" placeholder="COD_FUNCAO">
+                    <input type="text" data-key="NOM_FUNCAO" placeholder="NOM_FUNCAO">
+                    <input type="text" data-key="COD_SUBFUNCAO" placeholder="COD_SUBFUNCAO">
+                    <input type="text" data-key="NOM_SUBFUNCAO" placeholder="NOM_SUBFUNCAO">
+                    <input type="text" data-key="COD_PROGRAMA" placeholder="COD_PROGRAMA">
+                    <input type="text" data-key="DS_PROGRAMA" placeholder="DS_PROGRAMA">
+                    <input type="text" data-key="COD_ACAO_PROJ_ATV" placeholder="COD_ACAO_PROJ_ATV">
+                    <input type="text" data-key="NOM_ACAO_PROJ_ATV" placeholder="NOM_ACAO_PROJ_ATV">
+                    <input type="text" data-key="COD_ELEMENTO_DESPESA" placeholder="COD_ELEMENTO_DESPESA">
+                    <input type="text" data-key="NOM_ELEMENTO_DESPESA" placeholder="NOM_ELEMENTO_DESPESA">
+                    <input type="text" data-key="TIPO_DESPESA" placeholder="TIPO_DESPESA">
+
+                </div>
+                <button class="fetch-data" data-table="liquidacoes">Buscar</button>
+                <button class="download-csv" data-table="liquidacoes">Baixar CSV</button>
+                <button class="download-json" data-table="liquidacoes">Baixar JSON</button>
+                <pre id="liquidacoesOutput"></pre>
+
+            <body>
+                <p>Fonte: https://www.transparencia.se.gov.br/DadosAbertos/DadosAbertos.xhtml</p>
+            <body>
+
+            </div>
+        </section>
+
+        <section>
+            <button class="toggle-button">GET /pagamentos</button>
+            <div class="content" style="display: none;">
+                <div id="pagamentosFilters" class="filters">
+                    <input type="text" data-key="COD_ORGAO" placeholder="COD_ORGAO">
+                    <input type="text" data-key="SGL_ORGAO" placeholder="SGL_ORGAO">
+                    <input type="text" data-key="DAT_PAGAMENTO" placeholder="Data de Pagamento">
+                    <input type="text" data-key="COD_FUNCAO" placeholder="COD_FUNCAO">
+                    <input type="text" data-key="NOM_FUNCAO" placeholder="NOM_FUNCAO">
+                    <input type="text" data-key="COD_SUBFUNCAO" placeholder="COD_SUBFUNCAO">
+                    <input type="text" data-key="NOM_SUBFUNCAO" placeholder="NOM_SUBFUNCAO">
+                    <input type="text" data-key="COD_PROGRAMA" placeholder="COD_PROGRAMA">
+                    <input type="text" data-key="DS_PROGRAMA" placeholder="DS_PROGRAMA">
+                    <input type="text" data-key="COD_ACAO_PROJ_ATV" placeholder="COD_ACAO_PROJ_ATV">
+                    <input type="text" data-key="NOM_ACAO_PROJ_ATV" placeholder="NOM_ACAO_PROJ_ATV">
+                    <input type="text" data-key="COD_ELEMENTO_DESPESA" placeholder="COD_ELEMENTO_DESPESA">
+                    <input type="text" data-key="NOM_ELEMENTO_DESPESA" placeholder="NOM_ELEMENTO_DESPESA">
+                    <input type="text" data-key="TIPO_DESPESA" placeholder="TIPO_DESPESA">
+                </div>
+                <button class="fetch-data" data-table="pagamentos">Buscar</button>
+                <button class="download-csv" data-table="pagamentos">Baixar CSV</button>
+                <button class="download-json" data-table="pagamentos">Baixar JSON</button>
+                <pre id="pagamentosOutput"></pre>
+
+            <body>
+                <p>Fonte: https://www.transparencia.se.gov.br/DadosAbertos/DadosAbertos.xhtml</p>
+            <body>
+
+            </div>
+        </section>
+
+        <section>
+            <button class="toggle-button">GET /sic</button>
+            <div class="content" style="display: none;">
+                <div id="sicFilters" class="filters">
+                    <input type="text" data-key="TIPO" placeholder="Tipo">
+                    <input type="text" data-key="CANAL_ENTRADA" placeholder="Canal de Entrada">
+                    <input type="text" data-key="IDENTIFICACAO" placeholder="Identificação">
+                    <input type="text" data-key="STATUS" placeholder="Status">
+                    <input type="text" data-key="TIP_PESSOA" placeholder="Tipo de Pessoa">
+                    <input type="text" data-key="GENERO" placeholder="Gênero">
+                    <input type="text" data-key="ESTADO" placeholder="Estado">
+                    <input type="text" data-key="MUNICIPIO" placeholder="Município">
+                    <input type="text" data-key="ESCOLARIDADE" placeholder="Escolaridade">
+                    <input type="text" data-key="RENDA" placeholder="Renda">
+                </div>
+                <button class="fetch-data" data-table="sic">Buscar</button>
+                <button class="download-csv" data-table="sic">Baixar CSV</button>
+                <button class="download-json" data-table="sic">Baixar JSON</button>
+                <pre id="sicOutput"></pre>
+
+            <body>
+                <p>Fonte: https://www.transparencia.se.gov.br/DadosAbertos/DadosAbertos.xhtml</p>
+            <body>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+    <footer>
+        <img src="logo.png" alt="Logo do SergipePrevidência" id="footerImage">
+    </footer>
+</body>
+</html>
